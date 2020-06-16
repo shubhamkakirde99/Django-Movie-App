@@ -1,0 +1,4 @@
+django
+pyrebase
+urllib
+youtube-data-api

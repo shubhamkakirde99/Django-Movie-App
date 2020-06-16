@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% block content %}
+<form action="/movieList/">
+  <button href="/movieList" , class="btn btn-outline-dark btn-sm">back</button>
+</form>
+<center>
+  <h1>{{mName}}</h1>
+
+  <iframe
+    id="fr"
+    width="560"
+    height="315"
+    src="{{url}}"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+  ></iframe>
+  <h1>Comments:</h1>
+  <div
+    style="
+      overflow-y: scroll;
+      height: 200px;
+      width: 600px;
+      /* background-color: rgb(155, 154, 143); */
+    "
+  >
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for comment in comments %}
+        <tr>
+          <th>{{comment}}</th>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <form action="/comment/{{key}}/" method="POST">
+    {% csrf_token %}
+    <input name="comment" />
+    <button type="submit" class="btn btn-warning">Post Comment</button>
+  </form>
+</center>
+{% endblock %}
