@@ -1,7 +1,7 @@
 asgiref==3.2.9
 dataclasses-json==0.5.1
 dj-database-url==0.5.0
-Django==3.0.7
+Django==3.1.13
 django-heroku==0.3.1
 future==0.18.2
 gcloud==0.17.0
